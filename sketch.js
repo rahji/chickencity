@@ -1,19 +1,16 @@
-let chickenAni;
+let splats;
 
 function setup() {
-	new Canvas(400, 400);
+	new Canvas(600, 600);
 
-	chickenAni = loadAnimation(
-		'assets/sm_chicken1.png',
-		'assets/sm_chicken2.png',
-		'assets/sm_chicken1.png',
-		'assets/sm_chicken3.png'
-	);
-
-	chickenAni.frameDelay = 10;
+	splats = new Group();
+	splats.addAni('assets/sm_chicken001.png', 3);
 }
 
 function draw() {
-    clear();
-	animation(chickenAni, 250, 100);
+	clear();
+
+	if (mouse.presses()) {
+		new splats.Sprite(mouse.x, mouse.y);
+	}
 }
