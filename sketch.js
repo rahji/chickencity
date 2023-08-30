@@ -1,7 +1,19 @@
+let chickenAni;
+
 function setup() {
-  createCanvas(400, 400);
+	new Canvas(400, 400);
+
+	chickenAni = loadAnimation(
+		'assets/sm_chicken1.png',
+		'assets/sm_chicken2.png',
+		'assets/sm_chicken1.png',
+		'assets/sm_chicken3.png'
+	);
+
+	chickenAni.frameDelay = 10;
 }
 
 function draw() {
-  background(125);
+    clear();
+	animation(chickenAni, 250, 100);
 }
